@@ -13,6 +13,7 @@ once dependencies are install start by
 To start backend server , switch to backend service folder of repo and install all dependencies by
 ## "yarn"
 after that use
-### "yarn run dev" to start backend in watch version
+### "yarn run dev" 
+to start backend in watch version
 
 
