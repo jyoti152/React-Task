@@ -2,7 +2,6 @@ import { departmentModel, departmentInterface_b } from '../model/departmentModel
 
 export const upsertDepartment = async (req, res) => {
     try {
-        console.log("req.", req.body)
         const { id, name, maxEmployee, maxSalary } = req.body
         let department: departmentInterface_b;
         if (id) {
@@ -26,7 +25,6 @@ export const getDepartmentList = async (req, res) => {
         const departmentList: departmentInterface_b[] = await departmentModel.find({
             is_delete: false,
         });
-        console.log("departmentList", departmentList)
         return res.status(200).send(departmentList);
     } catch (err) {
         return res.status(500).send(err);
@@ -39,7 +37,6 @@ export const getDepartmentById = async (req, res) => {
             _id: id,
             is_delete: false,
         });
-        console.log("department", department)
         return res.status(200).send(department);
     } catch (err) {
         return res.status(500).send(err);

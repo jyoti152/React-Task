@@ -46,7 +46,6 @@ export const getUserById = async (req, res) => {
       _id: id,
       is_delete: false,
     });
-    console.log("userList", userList)
     return res.status(200).send(userList);
   } catch (err) {
     return res.status(500).send(err);
@@ -86,7 +85,6 @@ export const getSearchedUser = async (req, res) => {
         { 'department.name': { '$regex': searchString, '$options': 'i' } },
       ]
     }).sort({ joiningDate: -1 });
-    console.log("users", user)
     return res.status(200).send(user);
   } catch (err) {
     return res.status(500).send(err);

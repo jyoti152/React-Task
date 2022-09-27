@@ -57,7 +57,6 @@ const getUserList = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const userList = yield userModel_1.userModel.find({
             is_delete: false,
         }).sort({ joiningDate: -1 });
-        console.log("userList", userList);
         return res.status(200).send(userList);
     }
     catch (err) {
@@ -72,7 +71,6 @@ const getUserById = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             _id: id,
             is_delete: false,
         });
-        console.log("userList", userList);
         return res.status(200).send(userList);
     }
     catch (err) {
@@ -120,7 +118,6 @@ const getSearchedUser = (req, res) => __awaiter(void 0, void 0, void 0, function
                 { 'department.name': { '$regex': searchString, '$options': 'i' } },
             ]
         }).sort({ joiningDate: -1 });
-        console.log("users", user);
         return res.status(200).send(user);
     }
     catch (err) {

@@ -6,8 +6,7 @@ const PORT = 8620
 
 const mongoose = require("mongoose");
 
-let uri = "mongodb://localhost:27017"
-// const uri = "mongodb+srv://jyoti:jyoti@cluster0.j9tc329.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://jyoti:jyoti@cluster0.j9tc329.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(uri).then(() => {
     console.log("Mongodb connected successfully")
 }).catch((err) => {
